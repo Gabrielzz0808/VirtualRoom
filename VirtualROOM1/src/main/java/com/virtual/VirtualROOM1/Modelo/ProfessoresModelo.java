@@ -2,11 +2,13 @@ package com.virtual.VirtualROOM1.Modelo;
 
 import java.io.Serializable;
 import java.util.UUID;
-
 import org.springframework.hateoas.RepresentationModel;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.GenerationType;
 
 @Entity
 @Table(name="Professores")
@@ -14,6 +16,8 @@ public class ProfessoresModelo extends RepresentationModel<ProfessoresModelo> im
 
     public static final long serialVersionUID = 1l;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID idProfessor;
     private String nome;
     private String email;
